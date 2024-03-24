@@ -14,8 +14,8 @@ Other files in the [tokens](src/contracts/tokens) and [utils](src/contracts/util
 
 [buggy_nft](./src/contracts/buggy_nft.sol) is a buggy implementation of ERC721
 
-## Bug
-1. burn 之后 totalSupply 不会减一
-2. 没有权限也可以转移别人的 NFT
-3. 在 transfer 和 transferFrom 之后，owner不改变
-4. mint 和 burn 之后，用户的balance不变
+## Bugs
+1. burn 调用之后，totalSupply 不会减一
+2. 没有 Approve 权限也可以转移别人的 NFT
+3. 调用 transfer 和 transferFrom 之后，owner不会改变
+4. mint 和 burn 调用之后，用户的 balance 不会改变
