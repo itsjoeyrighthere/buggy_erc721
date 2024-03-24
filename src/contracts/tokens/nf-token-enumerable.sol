@@ -133,16 +133,18 @@ contract NFTokenEnumerable is
   {
     super._burn(_tokenId);
 
-    uint256 tokenIndex = idToIndex[_tokenId];
-    uint256 lastTokenIndex = tokens.length - 1;
-    uint256 lastToken = tokens[lastTokenIndex];
+    //👇 1 
+    //totalSupply should decrease 1
+    //uint256 tokenIndex = idToIndex[_tokenId];
+    //uint256 lastTokenIndex = tokens.length - 1;
+    //uint256 lastToken = tokens[lastTokenIndex];
 
-    tokens[tokenIndex] = lastToken;
+    //tokens[tokenIndex] = lastToken;
 
-    tokens.pop();
+    //tokens.pop();
     // This wastes gas if you are burning the last token but saves a little gas if you are not.
-    idToIndex[lastToken] = tokenIndex;
-    idToIndex[_tokenId] = 0;
+    //idToIndex[lastToken] = tokenIndex;
+    //idToIndex[_tokenId] = 0;
   }
 
   /**

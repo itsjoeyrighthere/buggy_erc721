@@ -237,7 +237,9 @@ contract NFToken is
     returns (uint256)
   {
     require(_owner != address(0), ZERO_ADDRESS);
-    return _getOwnerNFTCount(_owner);
+    //👇 4
+    //return _getOwnerNFTCount(_owner);
+    return 0;
   }
 
   /**
@@ -310,8 +312,9 @@ contract NFToken is
     address from = idToOwner[_tokenId];
     _clearApproval(_tokenId);
 
-    _removeNFToken(from, _tokenId);
-    _addNFToken(_to, _tokenId);
+    //👇 3
+    //_removeNFToken(from, _tokenId);
+    //_addNFToken(_to, _tokenId);
 
     emit Transfer(from, _to, _tokenId);
   }
@@ -428,11 +431,12 @@ contract NFToken is
     bytes memory _data
   )
     private
-    canTransfer(_tokenId)
+    
     validNFToken(_tokenId)
   {
-    address tokenOwner = idToOwner[_tokenId];
-    require(tokenOwner == _from, NOT_OWNER);
+    //👆 2 del canTransfer(_tokenId)
+    //address tokenOwner = idToOwner[_tokenId];
+    //require(tokenOwner == _from, NOT_OWNER);
     require(_to != address(0), ZERO_ADDRESS);
 
     _transfer(_to, _tokenId);
