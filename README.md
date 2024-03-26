@@ -16,6 +16,6 @@ Other files in the [tokens](src/contracts/tokens) and [utils](src/contracts/util
 
 ## Bugs
 1. burn 调用之后，totalSupply 不会减一
-2. 没有 Approve 权限也可以转移别人的 NFT
-3. 调用 transfer 和 transferFrom 之后，owner不会改变
+2. 没有 Approve 权限也可以通过 safeTransferFrom 转移别人的 NFT
+3. 调用 transferFrom 和 safetransferFrom 之后，owner不会改变
 4. mint 和 burn 调用之后，用户的 balance 不会改变
